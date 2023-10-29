@@ -17,21 +17,25 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create();
 
-        Listing::create([
-            'name' => 'Roxie',
-            'age' => 1,
-            'breed' => 'Pit',
-            'organization' => 'Animal Humane Society',
-            'location' => 'Minneapolis',
-            'contact' => 'AHS@ahs.org',
-        ]);
-        Listing::create([
-            'name' => 'Petunia',
-            'age' => 2,
-            'breed' => 'Pit',
-            'organization' => 'Animal Humane Society',
-            'location' => 'Minneapolis',
-            'contact' => 'AHS@ahs.org',
-        ]);
+        //  factory() create model instances with fake generated data
+        Listing::factory(6)->create();
+
+        // create() create new model instance using provided attributes
+        // Listing::create([
+        //     'name' => 'Roxie',
+        //     'age' => 1,
+        //     'breed' => 'Pit',
+        //     'organization' => 'Animal Humane Society',
+        //     'location' => 'Minneapolis',
+        //     'contact' => 'AHS@ahs.org',
+        // ]);
+        // Listing::create([
+        //     'name' => 'Petunia',
+        //     'age' => 2,
+        //     'breed' => 'Pit',
+        //     'organization' => 'Animal Humane Society',
+        //     'location' => 'Minneapolis',
+        //     'contact' => 'AHS@ahs.org',
+        // ]);
     }
 }
