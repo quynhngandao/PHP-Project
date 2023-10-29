@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+// import Listing model
+use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +15,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Listing::create([
+            'name' => 'Roxie',
+            'age' => 1,
+            'breed' => 'Pit',
+            'organization' => 'Animal Humane Society',
+            'location' => 'Minneapolis',
+            'contact' => 'AHS@ahs.org',
+        ]);
+        Listing::create([
+            'name' => 'Petunia',
+            'age' => 2,
+            'breed' => 'Pit',
+            'organization' => 'Animal Humane Society',
+            'location' => 'Minneapolis',
+            'contact' => 'AHS@ahs.org',
+        ]);
     }
 }

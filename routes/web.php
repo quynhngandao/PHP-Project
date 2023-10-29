@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 // get single listing
 Route::get('/listings/{id}', function ($id) {
-    return view('listings', [
-        'listing' => Listing::find($id) // data is coming from models/listing
+    $listing = Listing::find($id); // Data is coming from models/listing
+
+    return view('listing', [
+        'listing' => $listing
     ]);
 });

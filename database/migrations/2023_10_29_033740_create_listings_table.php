@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('age');
+            $table->integer('age');
             $table->string('breed');
             $table->string('organization');
             $table->string('location');
