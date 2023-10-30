@@ -11,7 +11,8 @@ class ListingController extends Controller
     // Show all listings
     public function index() {
         return view('listings.index', [
-            'listings' => Listing::all() // data is coming from models/listing
+            // filtering the tags
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get() // data is coming from models/listing
         ]);
     }
 
