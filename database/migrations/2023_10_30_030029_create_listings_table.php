@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('contact');
             $table->string('description');
+            $table->string('website');
             $table->timestamps();
         });
     }

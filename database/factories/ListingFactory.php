@@ -24,6 +24,7 @@ class ListingFactory extends Factory
             'location'=> $this->faker->city . ', ' . $this->faker->state(),
             'contact'=> $this->faker->email(),
             'description'=> $this->faker->sentence(),
+            'website'=> $this->faker->url(),
         ];
     }
 }

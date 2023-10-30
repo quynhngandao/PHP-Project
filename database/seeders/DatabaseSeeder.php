@@ -18,8 +18,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(5)->create();
 
         //  factory() create model instances with fake generated data
-        Listing::factory(7)->create();
+        Listing::factory(10)->create();
 
+        // TEST DATA
         // create() create new model instance using provided attributes
         // Listing::create([
         //     'name' => 'Roxie',
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
         //     'organization' => 'Animal Humane Society',
         //     'location' => 'Minneapolis',
         //     'contact' => 'AHS@ahs.org',
-        //     'description' => 'She is smart'
+        //     'description' => 'She is smart',
+        //     'website' => 'www.ahs.com'
         // ]);
         // Listing::create([
         //     'name' => 'Petunia',
@@ -37,7 +39,8 @@ class DatabaseSeeder extends Seeder
         //     'organization' => 'Animal Humane Society',
         //     'location' => 'Minneapolis',
         //     'contact' => 'AHS@ahs.org',
-        //     'description' => 'She is sweet'
+        //     'description' => 'She is sweet',
+        //     'website' => 'www.ahs.com'
         // ]);
     }
 }
