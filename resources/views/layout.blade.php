@@ -29,10 +29,10 @@
     <body class="mb-48">
         {{-- NAV --}}
         <nav class="flex justify-between items-center mb-4">
-            <a href="index.html"
-                ><img class="w-32" src="images/phpet-logo.webp" alt="" class="logo"
+            <a href="https://github.com/quynhngandao/PHPet" target="_blank" rel="noopener"
+                ><img class="h-24" src="images/phpet-logo.png" alt="" class="logo"
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
+            <ul class="flex space-x-6 mr-6 ml-6 text-lg">
                 <li>
                     <a href="register.html" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
@@ -47,18 +47,18 @@
             </ul>
         </nav>
 {{-- VIEWS OUTPUT  --}}
+<main>
 @yield('content')
+</main>
  {{-- FOOTER --}}
  <footer
  class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"
 >
  <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
 
- <a
-     href="create.html"
+ <a href="create.html"
      class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
-     >Adopt Now</a
- >
+     >Adopt Now</a>
 </footer>
 </body>
 </html>

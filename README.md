@@ -1,5 +1,5 @@
 <div align="center">
-   <img alt="logo" width="400" height="200" src="public/images/phpet-logo-white.jpg"/>
+   <img alt="logo" width="450" height="200" src="public/images/phpet-logo.png"/>
    <br/>
       <a href="">
     <h3 align="center">  PHPet </h3>
