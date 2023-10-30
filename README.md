@@ -42,7 +42,7 @@
   />
    &nbsp;
     <img
-    src="  https://img.shields.io/badge/MySQL-282C34?style=for-the-badge&logo=mysql&logoColor=00000F"
+    src="https://img.shields.io/badge/MySQL-282C34?style=for-the-badge&logo=mysql&logoColor=white"
     alt="mySQL logo"
     title="mySQL"
     height="25"
