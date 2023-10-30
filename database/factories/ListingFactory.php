@@ -19,7 +19,7 @@ class ListingFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'age' => $this->faker->numberBetween(1,10),
-            'breed' => $this->faker->randomElement(['dog', 'cat', 'rabbit', 'bird']),
+            'tags' => 'dog,cat,rabbit,bird',
             'organization' => $this->faker->company(),
             'location'=> $this->faker->city . ', ' . $this->faker->state(),
             'contact'=> $this->faker->email(),

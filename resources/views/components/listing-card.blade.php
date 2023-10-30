@@ -10,20 +10,8 @@
                 <a href="/listings/{{ $listing->id }}">{{ $listing->name }}</a>
             </h3>
             <div class="text-xl font-bold mb-4">{{ $listing->organization }}</div>
-            <ul class="flex">
-                <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
-                    <a href="#">Dog</a>
-                </li>
-                <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
-                    <a href="#">Cat</a>
-                </li>
-                <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
-                    <a href="#">Rabbit</a>
-                </li>
-                <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
-                    <a href="#">Bird</a>
-                </li>
-            </ul>
+            {{-- pass tagsCsv as a prop to the x-listing-tags component --}}
+            <x-listing-tags :tagsCsv="$listing->tags" />
             <div class="text-lg mt-4">
                 <i class="fa-solid fa-location-dot"></i> {{ $listing->location }}
             </div>
