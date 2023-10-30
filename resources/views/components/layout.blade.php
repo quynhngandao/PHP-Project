@@ -50,7 +50,8 @@
 
 {{-- VIEWS OUTPUT  --}}
 <main>
-@yield('content')
+{{-- index --}}
+{{$slot}}
 </main>
  {{-- FOOTER --}}
  <footer

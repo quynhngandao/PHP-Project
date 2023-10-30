@@ -1,5 +1,4 @@
-@extends('layout')
-
+<x-layout>
 @section('content')
     @include('partials._search')
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
@@ -9,7 +8,6 @@
         <x-card class="p-24">
             <div class="flex flex-col items-center justify-center text-center">
                 <img class="w-48 mr-6 mb-6" src="{{ asset('images/petunia.jpeg') }}" alt="" />
-
                 <h3 class="text-2xl mb-2">{{ $listing->name }}</h3>
                 <div class="text-xl font-bold mb-4">{{ $listing->organization }}</div>
                 {{-- import tags --}}
@@ -41,4 +39,4 @@
             </div>
         </x-card>
     </div>
-@endsection
+</x-layout>
