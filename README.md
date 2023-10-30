@@ -1,10 +1,10 @@
 <div align="center">
    <img alt="logo" width="450" height="200" src="public/images/phpet-logo.png"/>
    <br/>
-      <a href="">
+      <a href="https://github.com/quynhngandao/PHPet">
     <h3 align="center">  PHPet </h3>
   </a>
- <a href="https://github.com/quynhngandao/PHPet">View Demo</a>
+ <a href="#screenshot">View Demo</a>
   <p align="center">
           A platform that connect you to local shelters so that you can find your next Woofriend.
     <br />
@@ -70,6 +70,7 @@ Before you get started, make sure you have the following software installed on y
 1. Navigate to `https://<your-project-name>.test/`
 
 ### **Screenshot**
+![Screenshot](public/images/phpet.png)
 <br/>
 
 <p align="right"><a href="#top">back to top</a></p>
