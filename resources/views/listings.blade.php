@@ -1,15 +1,18 @@
 @extends('layout')
 
 @section('content')
+@include('partials._hero')
+@include('partials._search')
     <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
         @unless (count($listings) == 0)
             @foreach ($listings as $listing)
                 <div class="bg-gray-50 border border-gray-200 rounded p-6">
                     <div class="flex">
-                        <img class="hidden w-48 mr-6 md:block" src="images/404cat.gif" alt="" />
+                        <img class="hidden w-48 mr-6 md:block" src="{{asset('images/404cat.gif')}}" alt="" />
                         <div>
                             <h3 class="text-2xl">
-                                <a href="show.html">{{$listing->name}}</a>
+                                {{-- display each listing based on ID --}}
+                                <a href="/listings/{{$listing->id}}">{{$listing->name}}</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">{{$listing->organization}}</div>
                             <ul class="flex">

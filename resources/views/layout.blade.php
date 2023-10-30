@@ -29,8 +29,9 @@
     <body class="mb-48">
         {{-- NAV --}}
         <nav class="flex justify-between items-center mb-4">
-            <a href="https://github.com/quynhngandao/PHPet" target="_blank" rel="noopener"
-                ><img class="h-24" src="images/phpet-logo.png" alt="" class="logo"
+            <a href="/"
+            {{-- target="_blank" rel="noopener" --}}
+                ><img class="h-24" src="{{asset('images/phpet-logo.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 ml-6 text-lg">
                 <li>
@@ -46,13 +47,14 @@
                 </li>
             </ul>
         </nav>
+
 {{-- VIEWS OUTPUT  --}}
 <main>
 @yield('content')
 </main>
  {{-- FOOTER --}}
  <footer
- class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"
+ class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-80 md:justify-center"
 >
  <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
 

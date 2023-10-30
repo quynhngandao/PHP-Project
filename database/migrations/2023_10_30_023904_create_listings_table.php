@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('organization');
             $table->string('location');
             $table->string('contact');
+            $table->string('description');
             $table->timestamps();
         });
     }
