@@ -21,14 +21,16 @@ use App\Models\Listing;
 // update - Update listing
 // destroy - Delete listing
 
-// FINAL
-// get all listing
+// GET all listing
 Route::get('/', [ListingController::class, 'index']);
 
-// Show Create Form
+// GET Create Form
 Route::get('/listings/create', [ListingController::class, 'create']);
 
-// get single listing
+// STORE Listing Data
+Route::post('/listings', [ListingController::class, 'store']);
+
+// GET single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // OLD

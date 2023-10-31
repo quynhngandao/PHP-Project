@@ -22,7 +22,7 @@ class ListingFactory extends Factory
             'tags' => 'dog,cat,rabbit,bird,rehome,playdate',
             'owner' => $this->faker->name(),
             'location' => $this->faker->city . ', ' . $this->faker->state(),
-            'contact' => $this->faker->email(),
+            'email' => $this->faker->email(),
             'description' => $this->faker->sentence(),
         ];
     }

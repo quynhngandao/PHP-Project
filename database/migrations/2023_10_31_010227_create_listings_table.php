@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tags');
             $table->string('owner');
             $table->string('location');
-            $table->string('contact');
+            $table->string('email');
             $table->string('description');
             $table->timestamps();
         });
