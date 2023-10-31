@@ -20,6 +20,13 @@ class ListingController extends Controller
         ]);
     }
 
+      //Show single listing
+      public function show(Listing $listing) {
+        return view('listings.show', [
+            'listing' => $listing
+        ]);
+    }
+    
     //// SHOW Create Form
     public function create()
     {
@@ -93,14 +100,18 @@ class ListingController extends Controller
     //// DELETE Listing
     public function destroy(Listing $listing)
     {
+        // Make sure logged in user is owner
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $listing->delete();
         // FLASH MESSAGE for DELETE
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
 
     //// MANAGE Listings
-    public function manage()
-    {
+    public function manage() {
         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }
