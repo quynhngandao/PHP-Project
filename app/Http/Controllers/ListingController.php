@@ -38,15 +38,21 @@ class ListingController extends Controller
         $formFields = $request->validate([
             'name' => 'required',
             'age' => 'required',
-            'owner' => ['required', Rule::unique('listings',
-            'owner')],
+            'owner' => ['required', Rule::unique('listings', 'owner')],
             'location' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
             'description' => 'required'
         ]);
 
-         Listing::create($formFields);
+        // Path for uploading pic
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        // $formFields['user_id'] = auth()->id();
+
+        Listing::create($formFields);
 
          // Flash Message
          return redirect('/')->with('message', 'Listing created successfully!');
