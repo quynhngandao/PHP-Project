@@ -10,7 +10,7 @@ use App\Models\Listing;
 
 class ListingController extends Controller
 {
-    // Show all listings
+    //// SHOW all listings
     public function index()
     {
         return view('listings.index', [
@@ -19,7 +19,7 @@ class ListingController extends Controller
         ]);
     }
 
-    // Show single listing
+    //// SHOW single listing
     public function show(Listing $listing)
     {
         return view('listings.show', [
@@ -27,13 +27,13 @@ class ListingController extends Controller
         ]);
     }
 
-    // Show Create Form
+    //// SHOW Create Form
     public function create()
     {
         return view('listings.create');
     }
 
-    // Store Listing Data
+    //// STORE Listing Data
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -60,13 +60,13 @@ class ListingController extends Controller
         return redirect('/')->with('message', 'Listing created successfully!');
     }
 
-    // Show Edit Form
+    //// SHOW Edit Form
     public function edit(Listing $listing)
     {
         return view('listings.edit', ['listing' => $listing]);
     }
 
-    // EDIT Listing Data
+    //// EDIT Listing Data
     public function update(Request $request, Listing $listing)
     {
         $formFields = $request->validate([
@@ -91,5 +91,12 @@ class ListingController extends Controller
 
         // FLASH MESSAGE for edit
         return back()->with('message', 'Listing created successfully!');
+    }
+
+    //// DELETE Listing
+    public function destroy(Listing $listing) {
+        $listing->delete();
+        // FLASH MESSAGE for DELETE
+        return redirect('/')->with('message', 'Listing deleted successfully');
     }
 }
