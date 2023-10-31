@@ -29,7 +29,7 @@ use App\Models\Listing;
 // GET all listing
 Route::get('/', [ListingController::class, 'index']);
 
-// GET Create Form
+// SHOW Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth'); // use authenticate middleware, only authenticated users can access certain routes or controller actions
 
 // STORE Listing Data
@@ -43,6 +43,9 @@ Route::put('/listings/{listing}', [ListingController::class, 'update'])->middlew
 
 // DELETE Listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
+
+// MANAGE Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 // GET single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);

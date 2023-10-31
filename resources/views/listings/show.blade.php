@@ -1,6 +1,4 @@
 <x-layout>
-    @section('content')
-        @include('partials._search')
         <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
         </a>
         <div class="mx-4">
@@ -42,17 +40,18 @@
                 </div>
             </x-card>
 
-            {{-- EDIT --}}
-            <x-card class="mt-4 p-2 flex space-x-6">
+{{-- EDIT and DELETE in manage.blade.php --}}
+            {{-- <x-card class="mt-4 p-2 flex space-x-6">
                 <a href="/listings/{{ $listing->id }}/edit">
                     <i class="fa-solid fa-pencil"></i> Edit
                 </a>
-                {{-- Delete --}}
-                <form method="POST" action="/listings/{{ $listing->id }}">
+
+                 <form method="POST" action="/listings/{{ $listing->id }}">
                     @csrf
                     @method('DELETE')
                     <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
                 </form>
-            </x-card>
+            </x-card> --}}
+
         </div>
     </x-layout>
