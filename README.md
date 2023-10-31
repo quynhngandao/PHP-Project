@@ -6,7 +6,7 @@
   </a>
  <a href="#screenshot">View Demo</a>
   <p align="center">
-          A platform that connect you to local shelters so that you can find your next Woofriend.
+          A platform that connects you to local animals so that you can find your next Woofriend or set up a playdate with other local animals!!
     <br />
     <br />
   </p>
