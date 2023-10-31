@@ -10,6 +10,7 @@ class Listing extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'age', 'tags', 'owner', 'location', 'email', 'description', 'logo', 'user_id'];
+    // Note: make sure this has all the columns if unguard() is not used
 
     // function to filter
     public function scopeFilter($query, array $filters)

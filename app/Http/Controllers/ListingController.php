@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+// import Listing from Models
+use App\Models\Listing;
+// import Request
 use Illuminate\Http\Request;
 // import Rule from Validation
 use Illuminate\Validation\Rule;
-// import Listing from Models
-use App\Models\Listing;
 
 class ListingController extends Controller
 {
@@ -43,7 +44,7 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        $formFields['user_id'] = auth()->id(); // authenticate user associated with listing 
+        $formFields['user_id'] = auth()->id(); // authenticate user associated with listing
 
         // creates a new record without the need for an existing instance of the model
         Listing::create($formFields);
@@ -58,9 +59,15 @@ class ListingController extends Controller
         return view('listings.edit', ['listing' => $listing]);
     }
 
-    //// EDIT Listing Data
+    //// UPDATE Listing Data
     public function update(Request $request, Listing $listing)
     {
+
+        // Make sure logged in user is owner
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $formFields = $request->validate([
             'name' => 'required',
             'age' => 'required',
@@ -76,8 +83,6 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        // $formFields['user_id'] = auth()->id();
-
         // existing instance of the Listing model stored in the $listing variable
         $listing->update($formFields);
 
@@ -86,10 +91,16 @@ class ListingController extends Controller
     }
 
     //// DELETE Listing
-    public function destroy(Listing $listing) {
+    public function destroy(Listing $listing)
+    {
         $listing->delete();
         // FLASH MESSAGE for DELETE
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
 
+    //// MANAGE Listings
+    public function manage()
+    {
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
+    }
 }
