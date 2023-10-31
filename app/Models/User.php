@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // function to add relationship To Listings
+    public function listings()
+    {
+        return $this->hasMany(Listing::class, 'user_id'); // user_id is a column in user table in database
+    }
 }

@@ -43,7 +43,7 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        // $formFields['user_id'] = auth()->id();
+        $formFields['user_id'] = auth()->id(); // authenticate user associated with listing 
 
         // creates a new record without the need for an existing instance of the model
         Listing::create($formFields);

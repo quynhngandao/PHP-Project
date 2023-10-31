@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // provide primary key to user_id, associated listing with user_id will be deleted
             $table->string('name');
             $table->string('logo')->nullable();
             $table->integer('age');
