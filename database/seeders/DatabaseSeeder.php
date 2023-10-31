@@ -20,27 +20,5 @@ class DatabaseSeeder extends Seeder
         //  factory() create model instances with fake generated data
         Listing::factory(10)->create();
 
-        // TEST DATA
-        // create() create new model instance using provided attributes
-        // Listing::create([
-        //     'name' => 'Roxie',
-        //     'age' => 1,
-        //     'breed' => 'Pit',
-        //     'organization' => 'Animal Humane Society',
-        //     'location' => 'Minneapolis',
-        //     'contact' => 'AHS@ahs.org',
-        //     'description' => 'She is smart',
-        //     'website' => 'www.ahs.com'
-        // ]);
-        // Listing::create([
-        //     'name' => 'Petunia',
-        //     'age' => 2,
-        //     'breed' => 'Pit',
-        //     'organization' => 'Animal Humane Society',
-        //     'location' => 'Minneapolis',
-        //     'contact' => 'AHS@ahs.org',
-        //     'description' => 'She is sweet',
-        //     'website' => 'www.ahs.com'
-        // ]);
     }
 }

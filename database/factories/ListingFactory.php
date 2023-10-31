@@ -18,13 +18,12 @@ class ListingFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'age' => $this->faker->numberBetween(1,10),
-            'tags' => 'dog,cat,rabbit,bird',
-            'organization' => $this->faker->company(),
-            'location'=> $this->faker->city . ', ' . $this->faker->state(),
-            'contact'=> $this->faker->email(),
-            'description'=> $this->faker->sentence(),
-            'website'=> $this->faker->url(),
+            'age' => $this->faker->numberBetween(1, 10),
+            'tags' => 'dog,cat,rabbit,bird,rehome,playdate',
+            'owner' => $this->faker->name(),
+            'location' => $this->faker->city . ', ' . $this->faker->state(),
+            'contact' => $this->faker->email(),
+            'description' => $this->faker->sentence(),
         ];
     }
 }

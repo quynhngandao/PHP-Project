@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->string('tags');
-            $table->string('organization');
+            $table->string('owner');
             $table->string('location');
             $table->string('contact');
             $table->string('description');
-            $table->string('website');
             $table->timestamps();
         });
     }

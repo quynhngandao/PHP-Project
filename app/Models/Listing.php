@@ -20,7 +20,6 @@ class Listing extends Model
         if ($filters['search'] ?? false) {
             $query->where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('location', 'like', '%' . request('search') . '%')
-                ->orWhere('organization', 'like', '%' . request('search') . '%')
                 ->orWhere('description', 'like', '%' . request('search') . '%')
                 ->orWhere('tags', 'like', '%' . request('search') . '%');
         }
