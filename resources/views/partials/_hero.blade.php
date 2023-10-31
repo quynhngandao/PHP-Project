@@ -8,13 +8,15 @@
  ></div>
 
  <div class="z-10">
-     <h1 class="text-6xl font-bold uppercase text-indigo-950">
-         PHP<span class="text-black">et</span>
+     <h1 class="text-4xl font-bold uppercase text-indigo-950">
+         {{-- PHP<span class="text-black">et</span> --}}
+         Find your Woof-friend
      </h1>
 
-     <p class="text-2xl text-indigo-950 font-bold my-4">
-         Adopt or Play with Local Animals
-     </p>
+
+     <p class="text-xl text-indigo-950 font-bold my-4">
+        Connect with local animals
+        </p>
      <div>
          <a
              href="register.html"
