@@ -10,7 +10,7 @@
                 <img class="w-48 mr-6 mb-6" src="{{ asset('images/petunia.jpeg') }}" alt="" />
                 <h3 class="text-2xl mb-2"> <span class="font-bold">Name: </span>{{ $listing->name }}</h3>
                 <p class="text-xl mb-2"> <span class="font-bold">Age: </span> {{ $listing->age }}</p>
-                <div class="text-xl mb-4">  {{ $listing->organization }}</div>
+                <div class="text-xl mb-4"> <span class="font-bold">Owner: </span> {{ $listing->owner }}</div>
                 {{-- import tags --}}
                 <x-listing-tags :tagsCsv="$listing->tags" />
                 <div class="text-md my-4">
@@ -29,12 +29,12 @@
                         <a href="mailto:{{ $listing->email }}"
                             class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
                                 class="fa-solid fa-envelope"></i>
-                            Contact Shelter</a>
+                            Contact Me</a>
 
-                        <a href="{{$listing->url}}" target="_blank"
+                        {{-- <a href="{{$listing->url}}" target="_blank"
                             class="block bg-black text-white py-2 rounded-xl hover:opacity-80"><i
-                                class="fa-solid fa-globe"></i> Visit
-                            Website</a>
+                                class="fa-solid fa-globe"></i>
+                           Visit Website</a> --}}
                     </div>
                 </div>
             </div>

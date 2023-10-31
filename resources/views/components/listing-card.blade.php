@@ -9,7 +9,7 @@
                 {{-- display each listing based on ID --}}
                 <a href="/listings/{{ $listing->id }}">{{ $listing->name }}</a>
             </h3>
-            <div class="text-xl font-bold mb-4">{{ $listing->organization }}</div>
+            <div class="text-xl font-bold mb-4">{{ $listing->owner }}</div>
             {{-- pass tagsCsv as a prop to the x-listing-tags component --}}
             <x-listing-tags :tagsCsv="$listing->tags" />
             <div class="text-lg mt-4">
