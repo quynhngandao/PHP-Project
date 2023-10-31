@@ -33,8 +33,9 @@ class ListingController extends Controller
         return view('listings.create');
     }
 
-     // Store Listing Data
-     public function store(Request $request) {
+    // Store Listing Data
+    public function store(Request $request)
+    {
         $formFields = $request->validate([
             'name' => 'required',
             'age' => 'required',
@@ -46,15 +47,49 @@ class ListingController extends Controller
         ]);
 
         // Path for uploading pic
-        if($request->hasFile('logo')) {
+        if ($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
         // $formFields['user_id'] = auth()->id();
 
+        // creates a new record without the need for an existing instance of the model
         Listing::create($formFields);
 
-         // Flash Message
-         return redirect('/')->with('message', 'Listing created successfully!');
+        // Flash Message
+        return redirect('/')->with('message', 'Listing created successfully!');
+    }
+
+    // Show Edit Form
+    public function edit(Listing $listing)
+    {
+        return view('listings.edit', ['listing' => $listing]);
+    }
+
+    // EDIT Listing Data
+    public function update(Request $request, Listing $listing)
+    {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'owner' => ['required',],
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        // Path for uploading pic
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        // $formFields['user_id'] = auth()->id();
+
+        // existing instance of the Listing model stored in the $listing variable
+        $listing->update($formFields);
+
+        // FLASH MESSAGE for edit
+        return back()->with('message', 'Listing created successfully!');
     }
 }
