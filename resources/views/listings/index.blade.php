@@ -12,4 +12,8 @@
             <p>No listings found</p>
         @endunless
     </div>
+    {{-- PAGE NUMBER FOR PAGINATION LINKS --}}
+    <div class="mt-6 p-4">
+        {{$listings->links()}}
+      </div>
 </x-layout>
