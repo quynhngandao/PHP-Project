@@ -1,9 +1,14 @@
 <?php
 
+// Import ListingController
 use App\Http\Controllers\ListingController;
-use Illuminate\Support\Facades\Redis;
+// Import UserController
+use App\Http\Controllers\UserController;
+// Import request
+use Illuminate\Http\Request;
+// Import routes
 use Illuminate\Support\Facades\Route;
-// import module
+// Import Models
 use App\Models\Listing;
 
 /*
@@ -42,41 +47,17 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 // GET single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
+// SHOW Register/Create Form
+Route::get('/register', [UserController::class, 'create']);
 
+// CREATE New User
+Route::post('/users', [UserController::class, 'store']);
 
-// OLD
-// // get all listing
-// Route::get('/', function () {
-//     return view('listings', [
-//         'heading' => 'Latest Listings',
-//         'listings' => Listing::all() // data is coming from models/listing
-//     ]);
-// });
+// LOGOUT User
+Route::post('/logout', [UserController::class, 'logout']);
 
-// // get single listing
-// Route::get('/listings/{listing}', function (Listing
-// $listing) {
-//     return view('listing', [
-//         'listing' => $listing
-//     ]);
-// });
+// SHOW Login Form
+Route::get('/login', [UserController::class, 'login']);
 
-
-// ALTERNATIVE
-// Route::get('/listings/{id}', function ($id) {
-//     $listing = Listing::find($id); // Data is coming from models/listing
-
-//     if ($listing ) {
-//         return view('listing', [
-//             'listing' => $listing
-//         ]);
-//     } else {
-//         abort('404');
-//     }
-// });
-// OR
-// Route::get('/listings/{id}', function ($id) {
-//     return view('listing', [
-//         'listing' => Listing::find($id)
-//     ]);
-// });
+// LOGIN User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);

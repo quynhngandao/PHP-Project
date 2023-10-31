@@ -19,7 +19,7 @@
         </p>
      <div>
          <a
-             href="register.html"
+             href="/register"
              class="inline-block border-2 border-indigo-900 text-indigo-900 py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
              >Get Started</a
          >

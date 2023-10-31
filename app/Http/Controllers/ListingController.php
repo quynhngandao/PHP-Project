@@ -19,14 +19,6 @@ class ListingController extends Controller
         ]);
     }
 
-    //// SHOW single listing
-    public function show(Listing $listing)
-    {
-        return view('listings.show', [
-            'listing' => $listing
-        ]);
-    }
-
     //// SHOW Create Form
     public function create()
     {
@@ -99,4 +91,5 @@ class ListingController extends Controller
         // FLASH MESSAGE for DELETE
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
+
 }
