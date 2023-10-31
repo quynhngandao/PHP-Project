@@ -70,7 +70,7 @@ Before you get started, make sure you have the following software installed on y
 1. Navigate to `https://<your-project-name>.test/`
 
 ### **Screenshot**
-![Screenshot](public/images/phpet.png)
+![Screenshot](public/images/phpet.gif)
 <br/>
 
 <p align="right"><a href="#top">back to top</a></p>
